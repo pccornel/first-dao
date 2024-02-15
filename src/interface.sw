@@ -15,7 +15,7 @@ abi DaoVoting {
     #[storage(read, write)]
     fn constructor(gov_asset: AssetId);
 
-    /// Create a new proposal.
+    /// Create a new proposal with old one
     ///
     /// # Arguments
     ///
