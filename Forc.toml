@@ -1,5 +1,4 @@
 [project]
-authors = ["Fuel Labs <contact@fuel.sh>"]
+authors = ["hu"]
 entry = "main.sw"
-license = "Apache-2.0"
 name = "DAO-contract"
