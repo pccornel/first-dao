@@ -33,14 +33,13 @@ use ::interface::{DaoVoting, Info};
 use ::utils::validate_id;
 
 storage {
-    /// The amount of governance coins a user has deposited
     balances: StorageMap<Identity, u64> = StorageMap {},
     /// Information describing a proposal created via create_proposal(...)
     proposals: StorageMap<u64, ProposalInfo> = StorageMap {},
     /// Number of created proposals
     /// Used to check the validity of a proposal id
     /// Used as a unique identifier when creating proposals
-    proposal_count: u64 = 0,
+    proposal_count: u64 = 1,
     /// The initialization state of the contract.
     state: State = State::NotInitialized,
     /// Contract Id of the governance asset
@@ -56,7 +55,7 @@ impl DaoVoting for Contract {
             storage
                 .state
                 .read() == State::NotInitialized,
-            InitializationError::CannotReinitialize,
+            InitializationError::FirstErr,
         );
 
         storage.asset.write(asset);
