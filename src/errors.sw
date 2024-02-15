@@ -14,6 +14,7 @@ pub enum InitializationError {
     CannotReinitialize: (),
     /// The contract has not been initialized.
     ContractNotInitialized: (),
+    FirstErr: (),
 }
 
 /// Errors related to proposal execution.
